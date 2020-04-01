@@ -41,7 +41,13 @@ int main(){
 
     frequency = frequency*97/100;    
     while(1){
-        if( Switch == 0 ){
+        if( Switch == 1 ){
+            display  = 0x00;
+            redLED = 1;
+            greenLED = 0;
+        }
+            
+        else{
             redLED = 0;
             greenLED = 1;
 
@@ -53,12 +59,6 @@ int main(){
 
             display = int(table[frequency % 10])+0x80;
             wait(1.0);
-        }
-
-        if( Switch == 1 ){
-            display  = 0x00;
-            redLED = 1;
-            greenLED = 0;
         }
 
         for(j = 0; j < 2; j += 0.05 ){
